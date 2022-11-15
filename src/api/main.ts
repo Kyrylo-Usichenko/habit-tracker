@@ -15,7 +15,8 @@ class Main extends HttpClient {
     return Main.instanceCached;
   };
 
-  public getProducts = () => this.instance.get<any>("/products/3");
+  public signUp = (data: { email: string; password: string }) =>
+    this.instance.post("/signup", data);
 }
 
 export default Main;

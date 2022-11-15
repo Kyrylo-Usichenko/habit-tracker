@@ -7,8 +7,8 @@ import {
 import thunk from "redux-thunk";
 import Main from "../api/main";
 import MainProtected from "../api/main-protected";
-import { exampleActions } from "./actions/example";
-import userReducer from "./reducers/example";
+import { exampleActions } from "./actions/auth";
+import userReducer from "./reducers/auth";
 
 export type State = ReturnType<typeof reducers>;
 export type Actions = exampleActions;

@@ -1,6 +1,7 @@
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NewComp from "./components/NewComp";
+import Home from "./components/pages/home/Home";
 import store from "./store";
 
 export type AppDispatch = typeof store.dispatch;
@@ -10,7 +11,7 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<NewComp />} />
+          <Route path="/" element={<Home />} />
           {/* <Route path="/" element={<Navigate replace to="/dashboard" />} /> */}
         </Routes>
       </BrowserRouter>
