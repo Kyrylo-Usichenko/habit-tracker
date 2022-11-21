@@ -1,5 +1,7 @@
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { fireBaseAuth } from "../../../api/fireBaseAuth";
 import { AppDispatch } from "../../../App";
 import { signUp } from "../../../store/actions/auth";
 import { ButtonWrapper, Wrapper } from "./Home.styles";
@@ -26,6 +28,14 @@ export default function Home() {
     dispatch(signUp(data));
   };
 
+  const onSignInClick = () => {
+    signInWithEmailAndPassword(fireBaseAuth, email, password).then(
+      (userCredential) => {
+        console.log(userCredential);
+      }
+    );
+  };
+
   return (
     <Wrapper>
       <input
@@ -42,7 +52,7 @@ export default function Home() {
       />
       <ButtonWrapper>
         <button onClick={onSignUpClick}>sign up</button>
-        <button onClick={onSignUpClick}>sign in</button>
+        <button onClick={onSignInClick}>sign in</button>
       </ButtonWrapper>
     </Wrapper>
   );
